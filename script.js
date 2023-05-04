@@ -18,23 +18,20 @@ function RandomLatter() {
 function create() {
     if (counter <16) {
         //create rectangle.
-        for (var i = 0; i <3; i++) {
+for (var i = 0; i <3; i++) {
             var NewRect = document.createElement("section");
             var FatherOfNew = document.getElementById("memory-game");
             FatherOfNew.appendChild(NewRect);
-            var BackRect = document.createElement("div");
-            NewRect.appendChild(BackRect);
-            BackRect.style.width = 80 + (counter * 20) + "px";
-            BackRect.style.height = 80 + (counter * 20) + "px";
+            NewRect.style.width = 80 + (counter * 20) + "px";
+            NewRect.style.height = 80 + (counter * 20) + "px";
             let latter = document.createElement("h1")
             latter.innerHTML = RandomLatterArray[counter];
             latter.style.visibility = "hidden";
             counter++;
-            BackRect.appendChild(latter);
-            BackRect.setAttribute('data-letter', RandomLatterArray[counter - 1]);
-            BackRect.addEventListener('click', handleClick);
-            NewRect.className = "DualRect";
-            BackRect.className = "BackRect";
+            NewRect.appendChild(latter);
+            NewRect.setAttribute('data-letter', RandomLatterArray[counter - 1]);
+            NewRect.addEventListener('click', handleClick);
+            NewRect.className = "BackRect";
         }
     }
 }
